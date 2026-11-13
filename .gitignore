@@ -1,0 +1,14 @@
+# 系统 / 编辑器
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# 临时
+_*.png
+_s*.png
+_toc*.png
+_pg*.png
+_q*.png

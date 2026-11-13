@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数据结构 · 知识网</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="bg"></div>
+<canvas id="stage"></canvas>
+
+<header class="bar">
+  <div class="brand"><span class="dot"></span>数据结构 · 知识网<small>827</small></div>
+  <div class="search"><input id="q" placeholder="搜知识点，回车跳转（如 dijkstra / 哈夫曼）" autocomplete="off"><kbd>/</kbd></div>
+  <div class="chips" id="chips"></div>
+  <button class="ghost" id="uiDown" title="缩小界面">A−</button>
+  <button class="ghost" id="uiUp" title="放大界面">A+</button>
+  <button class="ghost" id="theme" title="切换深浅色">◐</button>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel">
+  <button class="close" id="closePanel">×</button>
+  <div class="p-head">
+    <h1 id="pTitle">选一个知识点</h1>
+    <div class="meta" id="pMeta"></div>
+  </div>
+  <p class="note" id="pNote">点击左侧任意结点，看它的考点、真题年份和相邻知识点。</p>
+  <div class="cxbar" id="pCx"></div>
+  <div class="years" id="pYears"></div>
+
+  <div class="figs" id="pFigs"></div>
+  <div class="exams" id="pExams"></div>
+  <h2 id="pQHead"></h2>
+  <div class="qs" id="pQuestions"></div>
+
+  <div class="mastery">
+    <span>掌握度</span>
+    <div class="mbtns" id="pMastery"></div>
+    <button class="weakbtn" id="pWeak">易错</button>
+  </div>
+  <h2>相邻知识点 <small id="pNeighborCount"></small></h2>
+  <ul class="neighbors" id="pNeighbors"></ul>
+</aside>
+
+<div class="legend" id="legend">
+  <div class="lg-title">关系</div>
+  <div class="lg-row"><i style="background:#58a6ff"></i>前置</div>
+  <div class="lg-row"><i style="background:#8b949e"></i>包含</div>
+  <div class="lg-row"><i style="background:#d29922"></i>对比</div>
+  <div class="lg-row"><i style="background:#f85149"></i>易混</div>
+  <div class="lg-row"><i style="background:#3fb950"></i>应用</div>
+  <div class="lg-title" style="margin-top:10px">掌握</div>
+  <div class="lg-row"><span class="ring r0"></span>未学</div>
+  <div class="lg-row"><span class="ring r1"></span>看过</div>
+  <div class="lg-row"><span class="ring r2"></span>在做</div>
+  <div class="lg-row"><span class="ring r3"></span>掌握</div>
+</div>
+
+<div class="hud" id="hud">
+  <div class="stat"><b id="statTotal">0</b><small>知识点</small></div>
+  <div class="stat"><b id="statMastered">0</b><small>已掌握</small></div>
+  <div class="stat"><b id="statPct">0%</b><small>进度</small></div>
+  <button class="primary" id="qbankBtn">题库 <b id="statQ">0</b></button>
+  <button class="primary" id="weakBtn">错题 <b id="statWeak">0</b></button>
+  <button class="primary" id="starBtn">星图</button>
+</div>
+
+<div class="starmap" id="starmap">
+  <h2>成就星图 <small id="starSub"></small></h2>
+  <div class="stars" id="starGrid"></div>
+  <p class="hint">每章按该章知识点的掌握比例点亮，全亮即“成网”。</p>
+</div>
+
+<div class="qbank" id="qbank">
+  <h2>题库 <small id="qbankSub"></small></h2>
+  <div id="qbankList"></div>
+  <p class="hint">按章节分组。点题跳到对应知识点，答案在结点面板里展开。</p>
+</div>
+
+<div class="weaklist" id="weaklist">
+  <h2>错题清单 <small id="weakSub"></small></h2>
+  <ul id="weakItems"></ul>
+  <p class="hint">做题做错的点标成“易错”，结点会亮红环；点条目直接跳过去。</p>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>window.__errs=[];window.addEventListener("error",function(e){window.__errs.push(e.message+" @"+(e.filename||"").split("/").pop()+":"+e.lineno)});</script>
+<script src="src/data.js"></script>
+<script src="src/physics.js"></script>
+<script src="src/figures.js"></script>
+<script src="src/questions.js"></script>
+<script src="src/render.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

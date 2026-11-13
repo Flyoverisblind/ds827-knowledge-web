@@ -1,5 +1,7 @@
 # 数据结构 · 知识网
 
+**在线版：https://flyoverisblind.github.io/ds827-knowledge-web/** （GitHub Pages）
+
 双击 `打开知识网.bat`（或直接打开 index.html）。零依赖、不联网、不构建。
 
 ![深色](预览_深色.png)
